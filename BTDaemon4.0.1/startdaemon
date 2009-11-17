@@ -1,0 +1,2 @@
+#!/bin/sh
+./btdaemon.py --http_password changeme --saveas_style 3 --paused_torrent_dir ../torrents/paused/ --save_in ../downloads/ --minport 9000 --maxport 9100 --max_upload_rate 5 "../torrents/running/"

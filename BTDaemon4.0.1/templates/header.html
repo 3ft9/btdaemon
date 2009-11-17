@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title><py-eval="title"></title>
+        <style>
+            body {
+                background-color: #000;
+                color: #fff;
+                font-size : 0.7em;
+                font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+            }
+            tr, td {
+                font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+            }
+            tr, td {
+                padding: 2px;
+            }
+            tr {
+                text-align: left;
+            }
+            h1 {
+                margin-bottom: 1em;
+            }
+            a:visited, a:active, a:link {
+                color : #039;
+            }
+            a:hover {
+                color : #F30;
+            }
+            ul {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            li {
+                margin-bottom: 5px;
+                type: square;
+            }
+            .right { text-align: right; }
+            .left { text-align: left; }
+            .center { text-align: center; }
+            .small { font-size: xx-small; }
+            .odd { background-color: #111; }
+            .even { background-color: #222; }
+        </style>
+    </head>
+    <body>
+        <a style="float: right;" href="http://www.bittorrent.com/" target="_blank"><img style="border: 0;" src="/images/logo/bittorrent_32.png" width="94" height="32" /></a>
+        <py-if="not loggedin">
+            <input type="button" value="login" onclick="location.href = '/op/login';" style="float: right; margin-right: 10px;" />
+        </py-if>
+        <py-else>
+            <input type="button" value="logout" onclick="location.href = '/op/logout';" style="float: right; margin-right: 10px;" />
+            <input type="button" value="shutdown" onclick="location.href = '/op/shutdown';" style="float: right; margin-right: 10px;" />
+        </py-else>
+        <h1><py-eval="title"></h1>

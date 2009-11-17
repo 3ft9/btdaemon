@@ -1,0 +1,5 @@
+<h2>Password required</h2>
+<py-if="len(reason) > 0"><p style="color: red;"><py-eval="reason"></p></py-if>
+<form method="post" action="<py-eval="submiturl">">
+    Password: <input type="password" name="pwd" /> <input type="submit" value="authenticate" />
+</form>

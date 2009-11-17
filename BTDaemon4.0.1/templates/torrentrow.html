@@ -1,0 +1,32 @@
+<tr>
+    <td class="left" style="border-top: 1px solid #555; padding-top: 10px;"><py-eval="name"></td>
+    <td class="right" style="border-top: 1px solid #555; padding-top: 10px;"><py-eval="fmtsize(size)"></td>
+    <td class="right" style="border-top: 1px solid #555; padding-top: 10px;"><py-eval="fmtsize(dnamt)"></td>
+    <td class="right" style="border-top: 1px solid #555; padding-top: 10px;"><py-eval="fmtsize(upamt)"></td>
+    <td class="center" style="border-top: 1px solid #555; padding-top: 10px; padding-bottom: 10px;" rowspan="2">
+        <a href="#" onclick="doRefresh = false; location.href = '/op/pause?f=<py-eval="path">';"><img src="/images/pause.png" width="20" height="20" border="0" /></a>
+        <a href="#" onclick="doRefresh = false; location.href = '/op/stop?f=<py-eval="path">';"><img src="/images/remove.png" width="20" height="20" border="0" /></a>
+    </td>
+</tr>
+<tr>
+    <td class="left small" style="padding-bottom: 10px;">
+        [<py-eval="('%.1f' % progress)">%] <py-eval="status">
+        <py-if="peers + seeds">
+            - <py-eval="('%s' % peers)"> peers
+              <py-eval="('%s' % seeds)"> seeds
+              <py-eval="('%s' % dist)"> dist copies
+        </py-if>
+    </td>
+    <td class="center small" style="padding-bottom: 10px;">
+        <py-if="progress > 0.9">
+            <table width="100%" cellspacing="0" cellpadding="0" style="border: 1px solid #aaa;"><tr>
+                <td style="width: <py-eval="('%.0f' % progress)">%; background-color: red; font-size: 0.1em;">&nbsp;</td>
+            <py-if="progress < 100">
+                <td style="font-size: 0.1em;">&nbsp;</td>
+            </py-if>
+            </tr></table>
+        </py-if>
+    </td>
+    <td class="right small" style="padding-bottom: 10px;"><py-eval="fmtsize(dnrate)">/s</td>
+    <td class="right small" style="padding-bottom: 10px;"><py-eval="fmtsize(uprate)">/s</td>
+</tr>

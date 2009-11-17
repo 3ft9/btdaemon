@@ -1,0 +1,41 @@
+BTDaemon 4.0.1
+==============
+
+Overview
+--------
+
+BTDaemon is a BitTorrent client designed to be run as a daemon with a
+web-based interface.
+
+See http://stut.net/software/btdaemon/ for more information.
+
+Requirements
+------------
+
+* Python 2.4
+* Don't think there's anything else
+
+Installation
+------------
+
+1. Extract to a directory somewhere
+2. Start btdaemon.py using whatever method is right for your plaform
+   For unix-based systems you will find a script called 'startdaemon'
+   in the BTDaemon4.0.1 directory which shows some of the arguments
+   you can pass to the script. Run btdaemon.py with no parameters for
+   a full list.
+3. Go to http://<hostname>:8765/ (unless you changed the default port
+   for the http interface)
+
+Author
+------
+
+Most of what's here came from the standard BitTorrent client from
+http://www.bittorrent.com/.
+
+The BTDaemon extensions were written by Stuart Dallas. If you would
+like to tell me anything at all feel free to email btdaemon@stut.net.
+
+http://stut.net/software/btdaemon/
+
+-Stuart, 11/05/2005 22:58

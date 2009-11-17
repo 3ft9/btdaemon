@@ -1,0 +1,70 @@
+<table width="100%" cellspacing="0" cellpadding="0">
+    <tr>
+        <th class="left" style="border-bottom: 2px solid #888;">Filename</th>
+        <th class="right" style="border-bottom: 2px solid #888;">Size</th>
+        <th class="right" style="border-bottom: 2px solid #888;">Download</th>
+        <th class="right" style="border-bottom: 2px solid #888;">Upload</th>
+        <th class="right" style="border-bottom: 2px solid #888;">&nbsp;</th>
+    </tr>
+<py-eval="rows">
+<tr>
+    <th rowspan="2" class="left">&nbsp;</th>
+    <th rowspan="2" class="right" style="border-top: 2px solid #888;">Totals</th>
+    <td class="right" style="padding-top: 10px; border-top: 2px solid #888;"><py-eval="fmtsize(totaldnamt)"></td>
+    <td class="right" style="padding-top: 10px; border-top: 2px solid #888;"><py-eval="fmtsize(totalupamt)"></td>
+</tr>
+<tr>
+    <td class="right small" style="padding-bottom: 10px;"><py-eval="fmtsize(totaldnrate)">/s</td>
+    <td class="right small" style="padding-bottom: 10px;"><py-eval="fmtsize(totaluprate)">/s</td>
+</tr>
+</table>
+
+<py-if="len(paused) > 0">
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-bottom: 20px;">
+    <tr>
+        <th colspan="2" class="left" style="border-bottom: 2px solid #888;">Paused</th>
+    </tr>
+<py-eval="paused">
+</table>
+</py-if>
+
+<table align="center" cellspacing="0" cellpadding="0" style="margin-bottom: 20px;">
+    <tr>
+        <form method="get" action="/op/addhttp" onsubmit="doRefresh = false; return true;">
+            <td><input type="text" name="url" size="60" /></td>
+            <td><input type="submit" value="add url" /></td>
+        </form>
+    </tr>
+<py-if="cpg.request.sessionMap.has_key('authenticated')">
+    <tr>
+        <form method="post" enctype="multipart/form-data" action="/op/addfile" onsubmit="doRefresh = false; return true;">
+            <td><input type="file" name="thefile" size="47" /></td>
+            <td><input type="submit" value="add file" /></td>
+        </form>
+    </tr>
+</py-if>
+</table>
+
+<table width="100%" cellspacing="0" cellpadding="0">
+    <tr>
+        <th class="left" style="border-bottom: 2px solid #888;">When</th>
+        <th class="left" style="border-bottom: 2px solid #888;">What</th>
+    </tr>
+<py-for="i in range(1, 11)">
+    <py-if="i < len(messages)">
+        <tr><td valign="top"><py-eval="messages[-i][0]"></td><td valign="top"><py-eval="messages[-i][1]"></td></tr>
+    </py-if>
+</py-for>
+</table>
+
+<script language="javascript">
+<!--
+    var doRefresh = true;
+    function Update()
+    {
+        if (doRefresh)
+            location.href = '/';
+    }
+    setTimeout(Update, 15000);
+-->
+</script>
