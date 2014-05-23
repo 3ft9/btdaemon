@@ -7,8 +7,6 @@ Overview
 BTDaemon is a BitTorrent client designed to be run as a daemon with a
 web-based interface.
 
-See http://stut.net/software/btdaemon/ for more information.
-
 Requirements
 ------------
 
@@ -35,7 +33,5 @@ http://www.bittorrent.com/.
 
 The BTDaemon extensions were written by Stuart Dallas. If you would
 like to tell me anything at all feel free to email btdaemon@stut.net.
-
-http://stut.net/software/btdaemon/
 
 -Stuart, 11/05/2005 22:58
